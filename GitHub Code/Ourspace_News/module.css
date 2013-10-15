@@ -1,0 +1,134 @@
+.bottom-dotted
+{
+	border-bottom: 1px dotted #000;
+}
+
+.news_flag
+{
+	margin-left:15px;
+	margin-right:15px;
+	margin-top:3px;
+}
+
+
+.highlighted
+{
+	color: #0088CE;
+}
+
+.highlighted-green
+{
+	color: #009933;
+}
+
+.highlighted-orange
+{
+	color: #ff9900;
+}
+
+
+
+
+.news-table td
+{
+	padding-bottom:3px;
+}
+
+.news-info
+{
+	width: 215px;
+	padding-top: 5px;
+	color:#999;
+}
+
+.news-info a
+{
+	color:#999 !important;
+}
+
+.news-user-thumb
+{
+	width:60px;
+}
+
+.news-user-thumb img
+{
+	padding: 1px !important;
+	border: solid 1px #dbdbdb !important;
+	margin-right:8px !important;
+}
+
+.recent-events-table-wrap
+{
+	width:100%;
+}
+
+.recent-events-table
+{
+	width:100%;
+}
+
+.recent-events-table td
+{
+	padding-top: 8px;
+}
+
+.recent-events-title-wrapper
+{
+	margin-bottom:0px !important;
+}
+
+.recent-events-table a
+{
+	text-decoration: none !important;
+}
+
+.recent-event-small
+{
+	/*font-size:11px;*/
+}
+
+.title-wrapper
+{
+	border-bottom: 1px solid #ebc299;
+}
+
+.title-wrapper h2
+{
+	margin-bottom: 0 !important;
+	display: inline-block;
+}
+
+.debate-thumbnail img
+{
+	width:100px;
+	border:1px solid #dbdbdb;
+		margin-top:4px;
+}
+
+.debate-thumbnail
+{
+	width:110px;
+	vertical-align:top;
+
+}
+
+.alt-item
+{
+	background-color: #FBFBFB;
+}
+
+.all-topics-link
+{
+	display:inline-block;
+	border-left:1px solid #ebc299;
+	padding-left:15px;
+	margin-left:15px;
+	text-decoration:none !important;
+}
+
+.flag-wrap
+{
+	width:30px;
+	padding-right:0;
+}

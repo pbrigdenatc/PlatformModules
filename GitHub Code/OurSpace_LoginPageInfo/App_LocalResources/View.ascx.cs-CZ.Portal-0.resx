@@ -1,0 +1,174 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="EditModule.Text" xml:space="preserve">
+    <value>Edit Module</value>
+  </data>
+  <data name="heardFrom0.Text" xml:space="preserve">
+    <value>-</value>
+  </data>
+  <data name="heardFrom1.Text" xml:space="preserve">
+    <value>Z tisku/médií</value>
+  </data>
+  <data name="heardFrom2.Text" xml:space="preserve">
+    <value>Přes přátele</value>
+  </data>
+  <data name="heardFrom3.Text" xml:space="preserve">
+    <value>Přes workshop/setkání </value>
+  </data>
+  <data name="heardFrom4.Text" xml:space="preserve">
+    <value>Přes leták/newsletter</value>
+  </data>
+  <data name="heardFrom5.Text" xml:space="preserve">
+    <value>Přes Facebook nebo Twitter</value>
+  </data>
+  <data name="heardFrom6.Text" xml:space="preserve">
+    <value>Jiné</value>
+  </data>
+  <data name="lblDebate.Text" xml:space="preserve">
+    <value>Jde o tvé názory a myšlenky. Ujasni si je a řekni je nahlas. Poslechni si, co si myslí ostatní, a společně zkuste vytvořit konkrétní návrhy či nápady k nejžhavějšímu dění v Evropě.</value>
+  </data>
+  <data name="lblDebateTitle.Text" xml:space="preserve">
+    <value>Diskutuj!</value>
+  </data>
+  <data name="lblExpress.Text" xml:space="preserve">
+    <value>Je čas říct, co si opravdu myslíš o dění na tomto kontinentě. Využij k tomu právě Ourspace.</value>
+  </data>
+  <data name="lblExpressTitle.Text" xml:space="preserve">
+    <value>Řekni, co si myslíš!</value>
+  </data>
+  <data name="lblExtra1.Text" xml:space="preserve">
+    <value>Pokud máš pocit, že jsou tví poslanci a senátoři hluší, je čas promluvit nahlas, aby tě konečně uslyšeli.</value>
+  </data>
+  <data name="lblIntro1.Text" xml:space="preserve">
+    <value>Ourspace je první digitální síť, kde můžeš vyjádřit svoje myšlenky a názory týkající se společnosti, politiky, ekonomické situace a jiných záležitostí a to napříč Evropou a navíc přímo s politiky.</value>
+  </data>
+  <data name="lblIntro2.Text" xml:space="preserve">
+    <value>Politika je věc, která je se týká všech, a ty máš možnost ji ovlivnit.</value>
+  </data>
+  <data name="lblMeet.Text" xml:space="preserve">
+    <value>Politika bez zpětné vazby by nebyla politikou. Díky Ourspace máš možnost diskutovat přímo s politiky a to nejen na internetu, ale i prostřednictvím workshopů a konferencí.</value>
+  </data>
+  <data name="lblMeetTitle.Text" xml:space="preserve">
+    <value>Poznej své politiky!</value>
+  </data>
+  <data name="lblTitle.Text" xml:space="preserve">
+    <value>Have your say!</value>
+  </data>
+</root>

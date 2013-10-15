@@ -1,0 +1,24 @@
+.proposalRow img
+{
+	float:left;
+	margin:4px 5px 5px 0;
+	
+}
+
+.proposalRow
+{
+border-bottom-color: #B1BCC5;
+    border-bottom-style: dotted;
+    border-bottom-width: 1px;
+    padding-bottom:3px;
+}
+
+.proposed-solutions .view-all-proposals
+{
+color: #006699 !important;
+text-decoration:none !important;
+    display: block;
+    font-size: 13px !important;
+    font-weight: normal;
+    margin-top: 3px;
+}

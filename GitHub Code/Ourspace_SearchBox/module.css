@@ -1,0 +1,42 @@
+
+#search a
+{
+	
+}
+
+
+	
+#search {
+	background:url(images/search.png) no-repeat;
+	min-width:150px;
+	padding-top:4px;
+	float:right;
+	margin-top:5px;
+	margin-right:10px;
+}
+	
+#search a{
+	background: url(images/spy.png) no-repeat left top;
+	margin-left:8px;
+	width: 10px;
+	float: left;
+	margin-top:1px;
+	padding-right:1px;
+	height:13px;
+	padding: 5px;
+}	
+
+#search input{
+	border:0px solid #fff;
+	width:112px;
+	height:15px;
+	float: left;
+	margin-top:2px;
+	font-weight: normal;
+	padding-left:3px;
+}
+
+.watermark
+{
+	color: #eee;
+}

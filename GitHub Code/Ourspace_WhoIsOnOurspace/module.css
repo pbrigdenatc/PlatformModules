@@ -1,0 +1,26 @@
+.facebook-output img
+{
+	float:left;
+	width:50px;
+	height:50px;
+	margin:4px;
+	margin-left:0;
+	margin-bottom:0;
+}
+
+.facebook-invite, .facebook-send
+{
+	color:#006699;
+	cursor: pointer;
+	display:inline-block;
+	margin-top:10px;
+}
+
+.facebook-invite:hover, .facebook-send:hover
+{
+	color:#ff9900;
+}
+
+.fb_edge_widget_with_comment span.fb_edge_comment_widget {
+top: 15px !important;
+left: -500px !important;}

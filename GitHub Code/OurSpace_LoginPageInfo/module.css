@@ -1,0 +1,43 @@
+.login-info-wrapper h2
+{
+	margin-bottom:0;
+}
+
+
+.login-info-wrapper h3
+{
+	font-size:15px;
+	color: #666666;
+	font-weight: bold;
+	margin-bottom:4px !important;
+	margin:0;
+}
+
+.login-info-wrapper h4
+{
+	font-size:14px;
+	color: #cc6600;
+	font-weight:normal;
+	margin:0;
+	
+}
+
+.login-info-wrapper td
+{
+	vertical-align:top;
+	padding-bottom:20px;
+}
+
+.login-info-wrapper
+{
+}
+
+.login-info-wrapper img
+{
+	margin-right:10px;
+}
+
+.login-info-wrapper table
+{
+	margin-top:20px;
+}

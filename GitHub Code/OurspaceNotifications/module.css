@@ -1,0 +1,18 @@
+ul.notifications-list li
+{
+    background-image: url('ourspace_small.png') !important;
+    padding-left: 20px !important;
+    padding-bottom:10px !important;
+    
+}
+
+ul.notifications-list
+{
+	margin-left:8px !important;
+}
+
+ul.notifications-list a:link, ul.notifications-list a:visited, ul.notifications-list a:hover, ul.notifications-list a:active
+{
+    text-decoration: none !important;
+    color: #0088CE !important;
+}

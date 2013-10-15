@@ -1,0 +1,75 @@
+h2
+{
+    border-bottom: 1px dotted #8DBDE6;
+    padding-bottom:5px;
+}
+
+/* CSS Used for extension components */
+.ThumbsUpSolution
+{
+	display:block;
+	background-image:url(../../Portals/_default/Skins/ourspace/images/agree.png);
+	background-position: 0 1px;
+	background-repeat: no-repeat;
+	height:19px;
+	width:20px;
+	margin-left:5px;
+	padding-left:24px;
+	padding-right:12px;
+	color:#333  !important;
+	text-decoration:none !important;
+	line-height:20px !important;
+	
+}
+.ThumbsDownSolution
+{
+	display:block;
+	background-image:url(../../Portals/_default/Skins/ourspace/images/disagree.png);
+	background-position: 4px 2px;
+	background-repeat: no-repeat;
+	height:19px;
+	width:20px;
+	padding-left:29px;
+	padding-right:0px;
+	/*border-left: 1px solid #fff;*/
+	color:#333  !important;
+	text-decoration:none !important;
+	line-height:20px !important;
+
+}
+
+
+.solution-text-wrapper
+{
+	float:right;
+	width:688px;
+	margin-bottom:10px;
+}
+
+.thumbs-wrapper
+{
+	width:85px;
+	float:left;
+	margin-top:8px;
+}
+
+
+.solution-text-separator
+{
+	height:5px;
+}
+
+.solution-counter
+{
+	display: block;
+    float: left;
+    height: 10px;
+    margin-top: 4px;
+    width: 14px;
+    font-weight: bold;
+}
+
+.debate-title
+{
+	font-size:18px !important;
+}

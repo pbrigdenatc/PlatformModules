@@ -1,0 +1,413 @@
+﻿ALTER PROCEDURE dbo.[Ourspace_Forum_Post_Add]
+
+	@PostID INT,
+	@Type BIT
+	
+	AS
+		
+		
+
+
+		IF NOT EXISTS (SELECT 1   FROM   Ourspace_Forum_Posts    WHERE  PostID = @PostID)
+		BEGIN
+		INSERT INTO Ourspace_Forum_Posts ([PostID],  [Thumbs])
+		VALUES      (@PostID, 0)
+		END
+
+		IF  @Type = 1
+		BEGIN
+		UPDATE Ourspace_Forum_Posts
+		SET    Thumbs = Thumbs+1
+		WHERE PostID = @PostID
+		END
+		ELSE
+		BEGIN
+		UPDATE Ourspace_Forum_Posts
+		SET    Thumbs = Thumbs-1
+		WHERE PostID = @PostID
+END
+
+
+
+--------------------------   2
+
+ALTER PROCEDURE dbo.Ourspace_Forum_Post_Thumbs_Get
+	(
+      @PostID INT
+    )
+AS 
+    SELECT  ThumbsUp,
+			ThumbsDown
+    FROM    dbo.Ourspace_Forum_Post_Thumbs
+    WHERE   PostID = @PostID
+
+---------------------------------  3
+
+ALTER PROCEDURE dbo.Ourspace_Forum_Post_Thumbs_Update
+
+	@PostID INT,
+	@UserID INT,
+	@Type BIT
+	
+	
+	AS
+		
+		
+
+
+		IF NOT EXISTS (SELECT 1   FROM   Ourspace_Forum_Post_Thumbs    WHERE  PostID = @PostID)
+		BEGIN
+		INSERT INTO Ourspace_Forum_Post_Thumbs ([PostID],  [ThumbsUp],[ThumbsDown])
+		VALUES      (@PostID, 0,0)
+		END
+
+		IF  @Type = 1
+		BEGIN
+		UPDATE Ourspace_Forum_Post_Thumbs
+		SET    ThumbsUp = ThumbsUp+1
+		WHERE PostID = @PostID
+		END
+		ELSE
+		BEGIN
+		UPDATE Ourspace_Forum_Post_Thumbs
+		SET    ThumbsDown = ThumbsDown+1
+		WHERE PostID = @PostID
+END
+
+INSERT INTO Ourspace_Forum_Post_Thumbs_Log VALUES (@PostID, @UserID,@Type,GETDATE())
+
+
+--------------------------------------- 4
+
+ALTER PROCEDURE dbo.Ourspace_Forum_Post_Thumbs_User_Check
+	/*
+	(
+	@parameter1 int = 5,
+	@parameter2 datatype OUTPUT
+	)
+	*/
+	@PostID INT,
+	@UserID INT
+	
+	AS
+
+	IF EXISTS (SELECT 1   FROM   Ourspace_Forum_Post_Thumbs_Log    WHERE  PostID = @PostID AND UserID = @UserID)
+	BEGIN
+	
+	SELECT(1)
+		
+	END
+	ELSE
+	BEGIN
+	SELECT(0)
+		
+	END
+
+
+-----------------------------------------5
+
+
+
+ALTER PROCEDURE dbo.Ourspace_Forum_Thread_GetAll
+
+    (
+      @ModuleID INT,
+      @ForumID INT,
+      @PageSize INT,
+      @PageIndex INT,
+      @Filter NVARCHAR(500),
+      @PortalID INT
+    )
+AS 
+    DECLARE @sql NVARCHAR(2000)	
+    DECLARE @PageLowerBound INT
+    DECLARE @PageUpperBound INT
+
+    SET @PageLowerBound = @PageSize * @PageIndex
+    SET @PageUpperBound = @PageLowerBound + @PageSize + 1 
+
+-- Create a temp table to store the select results
+    CREATE TABLE #PageIndex
+        (
+          IndexID INT IDENTITY(1, 1)
+                      NOT NULL,
+          ThreadID INT
+        )
+
+-- INSERT into the temp table
+-- Create dynamic SQL to populate temporary table	
+    SELECT  @sql = 'INSERT INTO #PageIndex (ThreadID)' + ' SELECT T.ThreadID'
+            + ' FROM dbo.Forum_Threads T'
+            + ' INNER JOIN dbo.Forum_Posts FFP ON T.ThreadID = FFP.PostID'
+            + ' INNER JOIN dbo.Forum_Posts FP ON T.LastPostedPostID = FP.PostID '
+            + ' WHERE FP.IsApproved = 1 AND ForumID = '
+            + CONVERT(VARCHAR, @ForumID) + @Filter
+            + ' ORDER BY T.IsPinned DESC, FP.CreatedDate DESC'
+    EXEC sp_executesql @sql
+    
+    SELECT  FFP.[Subject],
+            FLP.Body,
+            FLP.CreatedDate,
+            FFP.UserID AS StartedByUserID,
+            T.ThreadID,
+            ForumID,
+            [Views],
+            LastPostedPostID AS LastApprovedPostID,
+            ( SELECT    COUNT(ThreadID)
+              FROM      dbo.Forum_Posts
+              WHERE     ThreadID = T.ThreadID
+                        AND PostID <> T.ThreadID
+				    AND IsApproved = 1
+            ) AS Replies,
+            IsPinned,
+            PinnedDate,
+            FFP.IsClosed,
+            ThreadStatus,
+            AnswerPostID,
+            AnswerUserID,
+            PollID,
+            AnswerDate,
+            SitemapInclude,
+            ISNULL(( SELECT MAX(ThreadID)
+                     FROM   dbo.Forum_Threads
+                     WHERE  ThreadID < T.ThreadID
+                            AND ForumID = T.ForumID
+                   ), 0) AS PreviousThreadID,
+            ISNULL(( SELECT MIN(ThreadID)
+                     FROM   dbo.Forum_Threads
+                     WHERE  ThreadID > T.ThreadID
+                            AND ForumID = T.ForumID
+                   ), 0) AS NextThreadID,
+            ISNULL(( SELECT COUNT(ThreadID)
+                     FROM   dbo.Forum_ThreadRating TR
+                     WHERE  TR.ThreadID = T.ThreadID
+                   ), 0) AS RatingCount,
+            ISNULL(( SELECT AVG(Rate)
+                     FROM   dbo.Forum_ThreadRating TR
+                     WHERE  TR.ThreadID = T.ThreadID
+                   ), 0) AS Rating,
+            ( SELECT    COUNT(ThreadID)
+              FROM      #PageIndex
+            ) AS TotalRecords,
+            CI.CreatedByUserID,
+            CI.CreatedOnDate,
+            CI.ContentKey,
+            CI.Indexed,
+            CI.Content,
+            CI.ContentItemID,
+            CI.LastModifiedByUserID,
+            CI.LastModifiedOnDate,
+            CI.ModuleID,
+            CI.TabID,
+            CI.ContentTypeID,
+			TI.ThreadLanguage,
+			TI.phaseId
+    FROM    dbo.Forum_Threads T
+            INNER JOIN #PageIndex I ON T.ThreadID = I.ThreadID
+			INNER JOIN dbo.Forum_Posts FFP ON I.ThreadID = FFP.PostID
+            INNER JOIN dbo.Forum_Posts FLP ON T.LastPostedPostID = FLP.PostID
+            LEFT OUTER JOIN dbo.ContentItems CI ON T.ContentItemID = CI.ContentItemID
+    LEFT JOIN dbo.Ourspace_Forum_Thread_Info TI ON T.ThreadID = TI.ThreadId
+	WHERE   I.IndexID > @PageLowerBound
+            AND I.IndexID < @PageUpperBound
+    ORDER BY T.IsPinned DESC,
+            FLP.CreatedDate DESC 
+
+
+
+
+
+--------------------------------- 6
+
+ALTER PROCEDURE dbo.[Ourspace_Forum_Thread_GetByForum]
+(
+      @ForumID INT,
+      @UserID INT	
+    )
+AS 
+    SELECT  [Subject],
+            Body,
+            CreatedDate,
+            UserID AS StartedByUserID,
+            T.ThreadID,
+            ForumID,
+            [Views],
+            LastPostedPostID AS LastApprovedPostID,
+            ( SELECT    COUNT(ThreadID)
+              FROM      dbo.Forum_Posts
+              WHERE     ThreadID = T.ThreadID
+                        AND PostID <> T.ThreadID
+				    AND IsApproved = 1
+            ) AS Replies,
+            IsPinned,
+            PinnedDate,
+            IsClosed,
+            ThreadStatus,
+            AnswerPostID,
+            AnswerUserID,
+            PollID,
+            AnswerDate,
+            SitemapInclude,
+            ISNULL(( SELECT MAX(ThreadID)
+                     FROM   dbo.Forum_Threads
+                     WHERE  ThreadID < T.ThreadID
+                            AND ForumID = T.ForumID
+                   ), 0) AS PreviousThreadID,
+            ISNULL(( SELECT MIN(ThreadID)
+                     FROM   dbo.Forum_Threads
+                     WHERE  ThreadID > T.ThreadID
+                            AND ForumID = T.ForumID
+                   ), 0) AS NextThreadID,
+            ISNULL(( SELECT COUNT(ThreadID)
+                     FROM   dbo.Forum_ThreadRating TR
+                     WHERE  TR.ThreadID = T.ThreadID
+                   ), 0) AS RatingCount,
+            ISNULL(( SELECT AVG(Rate)
+                     FROM   dbo.Forum_ThreadRating TR
+                     WHERE  TR.ThreadID = T.ThreadID
+                   ), 0) AS Rating,
+            1 AS TotalRecords,
+            CI.CreatedByUserID,
+            CI.CreatedOnDate,
+            CI.ContentKey,
+            CI.Indexed,
+            CI.Content,
+            CI.ContentItemID,
+            CI.LastModifiedByUserID,
+            CI.LastModifiedOnDate,
+            CI.ModuleID,
+            CI.TabID,
+            CI.ContentTypeID,
+			TI.ThreadLanguage,
+			TI.phaseId
+    FROM    dbo.Forum_Threads T
+            INNER JOIN dbo.Forum_Posts P ON T.ThreadID = P.PostID
+            LEFT JOIN dbo.ContentItems CI ON T.ContentItemID = CI.ContentItemID
+			LEFT JOIN dbo.Ourspace_Forum_Thread_Info TI ON T.ThreadID = TI.ThreadId
+    WHERE   ForumID = @ForumID
+
+
+------------------------------------ 7
+
+
+
+ALTER PROCEDURE dbo.Ourspace_Forum_Thread_Phase_Get
+	(
+      @ThreadID INT
+    )
+AS 
+    SELECT  PhaseId			
+    FROM    dbo.Ourspace_Forum_Thread_Info
+    WHERE   ThreadId = @ThreadID
+
+
+
+--------------------------------------- 8
+
+
+
+ALTER PROCEDURE dbo.[Ourspace_Forum_UserInfo_Add]
+    (
+      @UserID INT,
+      @PortalID INT
+    )
+AS 
+    IF NOT EXISTS ( SELECT  [UserID]
+                    FROM    dbo.Ourspace_Forum_User_Info
+                    WHERE   [UserID] = @UserID
+                            AND PortalID = @PortalID ) 
+        BEGIN
+            INSERT  INTO dbo.Ourspace_Forum_User_Info
+                    (
+                      [UserID],
+                      [PortalID]
+                     
+	              )
+            VALUES  (
+                      @UserID,
+                      @PortalID
+	              )
+        END
+
+
+---------------------------------- 9 
+
+ALTER PROCEDURE dbo.Ourspace_Forum_UserThreadViewsIncrement
+(
+@UserID int,
+@ThreadID int
+
+)
+AS
+IF NOT EXISTS (SELECT * FROM Ourspace_Forum_User_ThreadView_Log WHERE userId = @userID AND threadId = @threadID)
+BEGIN
+-- If user hasn't already viewed the thread , his threadViews counter increments
+    UPDATE
+	Ourspace_Forum_User_Info
+SET
+	[threadViews] = ((SELECT [threadViews] FROM Ourspace_Forum_User_Info (nolock) WHERE [userID] = @userID) + 1)
+WHERE
+	[userID] = @userID
+
+	-- The user's threadView also gets logged to avoid incrementing each time he views the same thread
+	INSERT INTO Ourspace_Forum_User_ThreadView_Log (userID, threadID, date) VALUES (@userID, @threadID, getDate())
+
+END
+
+
+----------------------------------- 10
+
+ALTER PROCEDURE dbo.Ourspace_UserPoints_Get
+	(
+	-- the id of the user
+      @UserID INT,
+	  -- how old should the points be. for the hall of fame functionality, points gathered in a certain timeframe
+	  -- are retrieved
+	  @days INT,
+	  -- indicates if dateFrom needs to be taken into consideration
+	  @isAllTime BIT,
+	  -- number of posts created by the user
+	  @postsCreated VARCHAR OUTPUT,
+	  -- number of threads viewed by the user
+	  @threadsViewed VARCHAR OUTPUT,
+	  -- number of posts user has thumbed up/down
+	  @postsRated VARCHAR OUTPUT,
+	  -- number of the users posts that have been thumbed up (type = 1)
+	  @usersPostsVotedUp VARCHAR OUTPUT,
+	  -- number of the users posts that have been thumbed down (type = 0)
+	@usersPostsVotedDown VARCHAR OUTPUT
+    )
+AS 
+
+--DECLARE @postsCreated VARCHAR
+
+--DECLARE @threadsViewed VARCHAR
+
+--DECLARE @postsRated VARCHAR 
+
+--DECLARE @usersPostsRated VARCHAR
+IF @isAllTime = 1
+	BEGIN
+		SET @postsCreated =  (SELECT  PostCount FROM Forum_Users WHERE   UserID = @UserID)
+		SET @threadsViewed  = (SELECT COUNT(*) FROM  Ourspace_Forum_User_ThreadView_Log WHERE UserID = @UserID)
+		SET @postsRated =(SELECT COUNT(*) FROM Ourspace_Forum_Post_Thumbs_Log WHERE UserID = @UserID)
+		SET @usersPostsVotedUp = (SELECT COUNT(*) FROM Ourspace_Forum_Post_Thumbs_Log AS tl LEFT JOIN Forum_Posts AS fp ON tl.postID = fp.postID WHERE fp.userID =  @userID AND tl.type = 1)
+		SET @usersPostsVotedDown = (SELECT COUNT(*) FROM Ourspace_Forum_Post_Thumbs_Log AS tl LEFT JOIN Forum_Posts AS fp ON tl.postID = fp.postID WHERE fp.userID =  @userID AND tl.type = 0)
+	END
+ELSE
+	BEGIN
+		SET @postsCreated =  (SELECT COUNT(*) FROM Forum_Posts WHERE   UserID = @UserID AND CreatedDate > dateadd(day, -1* @Days, Getdate()))
+		SET @threadsViewed  = (SELECT COUNT(*) FROM  Ourspace_Forum_User_ThreadView_Log WHERE UserID = @UserID AND [date] > dateadd(day, -1* @Days, Getdate()))
+		SET @postsRated =(SELECT COUNT(*) FROM Ourspace_Forum_Post_Thumbs_Log WHERE UserID = @UserID AND [date] > dateadd(day, -1* @Days, Getdate()))
+		SET @usersPostsVotedUp = (SELECT COUNT(*) FROM Ourspace_Forum_Post_Thumbs_Log AS tl LEFT JOIN Forum_Posts AS fp ON tl.postID = fp.postID WHERE fp.userID =  @userID AND tl.type = 1 AND [date] > dateadd(day, -1* @Days, Getdate()))
+		SET @usersPostsVotedDown = (SELECT COUNT(*) FROM Ourspace_Forum_Post_Thumbs_Log AS tl LEFT JOIN Forum_Posts AS fp ON tl.postID = fp.postID WHERE fp.userID =  @userID AND tl.type = 0 AND [date] > dateadd(day, -1* @Days, Getdate()))
+	END
+
+
+
+
+
+--RETURN 'Posts created: '+@postsCreated +' Threads Viewed:'+ @threadsViewed + ' Posts rated:'+@postsRated+' Users posts rated:'+ @usersPostsRated
+
+
+-----------------------------------------------

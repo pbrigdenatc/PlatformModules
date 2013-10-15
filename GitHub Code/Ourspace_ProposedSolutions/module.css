@@ -1,0 +1,36 @@
+h2
+{
+    border-bottom: 1px dotted #8DBDE6;
+    /*padding-bottom:5px;*/
+}
+
+h2.no-border
+{
+    border-bottom: none;
+    padding-bottom:5px;
+    margin-bottom:0;
+}
+
+.userThumb
+{
+	margin-right:15px;
+	float:left;
+	margin-top:8px;
+}
+
+.debate-thumbnail
+{
+	vertical-align:top;
+}
+
+.proposal-item
+{
+	padding:10px 0 0 0;
+	border-top:1px dotted #8DBDE6;
+	margin-top:5px;
+}
+
+.solutionFooter
+{
+	padding-bottom:10px;
+}

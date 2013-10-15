@@ -1,0 +1,64 @@
+#translating-status
+{
+	background-image: url(images/loading.gif) !important;
+	padding:8px;
+	padding-right:30px;
+	background-position: right center;
+	background-repeat:no-repeat;
+	height:23px;
+	float:right;
+	display:none;
+	line-height:23px;
+	background-color:#F4FAFF;
+	border: 1px solid #77AADD;
+	-moz-border-radius:6px; -webkit-border-radius:6px; border-radius: 6px 6px 6px 6px;
+	
+}
+
+#translating-complete
+{
+	display:none;
+	background-color:#E5FDD0;
+	border: 1px solid #76A477;
+	padding:8px;
+	float:right;
+	-moz-border-radius:6px; -webkit-border-radius:6px; border-radius: 6px 6px 6px 6px;
+	
+}
+
+#translator-wrapper
+{
+	height:42px;
+	margin-left:20px;
+	margin-right:20px;
+	margin-top:15px;
+	display:none;
+	
+	
+	
+}
+
+#reverting-complete
+{
+		display:none;
+	background-color:#E5FDD0;
+	border: 1px solid #76A477;
+	padding:8px;
+	float:right;
+	-moz-border-radius:6px; -webkit-border-radius:6px; border-radius: 6px 6px 6px 6px;
+	
+}
+
+.translating
+{
+	color:#ededed !important;
+	background-image: url(images/loading.gif) !important;
+	padding-right:30px;
+	background-position: center center;
+	background-repeat:no-repeat;
+}
+
+.translateLanguage
+{
+	margin-bottom:10px;
+}

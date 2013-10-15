@@ -1,0 +1,115 @@
+.textEditor-wrapper
+{
+	background-color: #f2f2f2;
+	border-top: 2px solid #9cf;
+	border-bottom: 2px solid #9cf;
+	padding: 15px 20px 17px 20px;
+	display:none;
+}
+
+.textEditor-propose-solution
+{
+	display:none;
+}
+
+.report-link, .report-link-height
+{
+	background: url(images/report-this.png) no-repeat right center;
+	padding-right:19px;
+	display:block;
+	float:right;
+	height:16px;
+}
+
+.report-reply
+{
+	margin: 4px 0 0 0 !important;
+}
+
+.feedback-instructions
+{
+	margin: 10px 0;
+	padding-left:20px;
+	background: url(../../Portals/_default/Skins/ourspace/images/report-this.png) no-repeat left top;
+}
+
+#available-chars, #available-chars-wrap
+{
+	color: #000;
+	font-size:15px;
+	text-align: left;
+}
+
+#available-chars {font-weight: bold;}
+
+
+.feedback-cancel
+{
+	cursor:pointer;
+}
+
+.textEditor-propose-solution input
+{
+	width:542px;
+	border: 1px solid #ccc;
+	padding:5px;
+	-moz-border-radius:4px; -webkit-border-radius:4px; border-radius:4px 4px 4px 4px;
+}
+
+.textEditor-propose-solution textarea
+{
+	border: 1px solid #ccc;
+	padding:5px;
+	-moz-border-radius:4px; -webkit-border-radius:4px; border-radius:4px 4px 4px 4px;
+
+	width:542px;
+	height:215px;
+}
+
+.textEditor-propose-solution td
+{
+	vertical-align:top;
+}
+
+.textEditor-propose-solution label
+{
+	font-weight:bold;
+	 white-space:nowrap;
+	 padding-top:5px;
+	 display:inline-block;
+	 width:100px;
+}
+
+.textEditor-propose-solution img
+{
+
+margin-right:3px;
+}
+
+.textEditor-propose-solution table
+{
+	width:100%;
+}
+.proposal-submission-link-wrapper
+{
+	text-align:right;
+	
+}
+
+.textEditor-propose-solution
+{
+	width:600px;
+}
+
+
+.propose-label-td
+{
+	padding-right:10px;
+	text-align:right;
+}
+
+.dialog-link-wrapper
+{
+	margin-top:20px;
+	text-align:right;
+}

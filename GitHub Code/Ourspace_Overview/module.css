@@ -1,0 +1,476 @@
+
+.debate-thumbnail img
+{
+	width:100px;
+	float:left;
+	margin-right:10px;
+	margin-top:4px;
+	
+}
+
+.debate-title
+{
+	font-size:16px !important;
+		line-height:17px !important;
+}
+
+.overview-small-flag
+{
+	display:inline-block;
+	margin-top:2px;
+	vertical-align:text-top;
+	margin-left:5px;
+}
+
+.overview-text-wrap
+{
+	margin: 0; color: #999; line-height:18px;
+}
+
+.light-text
+{
+	color:#999;
+}
+
+.overview-item-wrap
+{
+	border-top: 1px dotted #8dbde6;
+	padding-bottom:15px;
+	padding-top:12px;
+	padding-left:10px;
+}
+
+.overview-item-wrap-left
+{
+	border-top: 1px dotted #8dbde6;
+	padding-bottom:15px;
+	padding-top:12px;
+	padding-left:15px;
+	width:410px;
+}
+
+.alt-item
+{
+	background-color: #f9f9f9;
+}
+
+
+.thread-phases-container
+{
+	background-image: url(../../images/phases-bg.png);
+	background-repeat: repeat-x;
+	height:26px;
+	line-height:26px;
+	float:right;
+	margin: 0 auto;
+	-moz-border-radius:6px;
+	-webkit-border-radius:6px;
+	border-radius: 6px 6px 6px 6px;
+	width:332px;
+	margin-right:10px;
+    margin-top: 5px;
+
+}
+
+.phase-progress-1
+{
+	-moz-border-radius-topleft:6px;
+	-webkit-border-top-left-radius:6px;
+	border-top-left-radius: 6px;
+	
+	-moz-border-radius-bottomleft:6px;
+	-webkit-border-bottom-left-radius:6px;
+	border-bottom-left-radius: 6px;
+}
+
+.phase-progress-4
+{
+	-moz-border-radius-topright:6px;
+	-webkit-border-top-right-radius:6px;
+	border-top-right-radius: 6px;
+	
+	-moz-border-radius-bottomright:6px;
+	-webkit-border-bottom-right-radius:6px;
+	border-bottom-right-radius: 6px;
+}
+
+.title-bar
+{
+	-moz-border-radius-topleft:6px;
+	-webkit-border-top-left-radius:6px;
+	border-top-left-radius: 6px;
+	
+	-moz-border-radius-bottomleft:6px;
+	-webkit-border-bottom-left-radius:6px;
+	border-bottom-left-radius: 6px;
+}
+
+.phase-progress-icon
+{
+	
+	padding:0 10px;
+	height:26px;
+	background-repeat: no-repeat;
+	/*border: 1px solid #999;*/
+	text-align:center;
+	line-height:26px !important;
+	background-position: 25px 0;
+	width:63px;
+}
+
+.phase-icon-wrap
+{
+	background-image: url(../../images/phases-icons-bg.png);
+	background-repeat:no-repeat;
+	background-position:center 9px;
+	width:335px;
+	float:right;
+	margin-right:10px;
+	margin-bottom:3px;
+	margin-top:0;
+}
+
+.phase-progress-complete
+{
+	background-image: url(../../images/phase-complete.png);
+	background-repeat: repeat-x;
+	background-position: center right;
+	color:#fff;
+	font-weight: bold;
+}
+
+.phase-progress-complete a
+{
+	color:#fff !important;
+}
+
+.phase-progress-active a
+{	color:#fff !important;
+}
+
+a.phase-unavailable
+{
+	text-decoration: none !important;
+}
+
+
+.phase-progress-inactive a
+{
+	color: #aaa !important;
+font-weight:normal !important;
+text-decoration: none !important;
+	
+}
+
+
+.phase-progress-active
+{
+	background-image: url(../../images/phase-active.png);
+	background-repeat: repeat-x;
+	background-position: center right;
+	color:#fff;
+	font-weight: bold;
+	
+}
+.phase-progress-inactive
+{
+	color: #aaa;
+font-weight:normal;
+	
+}
+
+
+.phase-progress-text-inactive
+{
+	
+}
+
+.phase-progress-text-complete
+{
+	/*color: #ff9900;*/
+	
+}
+
+.phase-progress-1-active
+{
+	background-image: url(../../images/phase-1-active.png);
+}
+
+.phase-progress-2-active
+{
+	background-image: url(../../images/phase-2-active.png);
+}
+
+.phase-progress-3-active
+{
+	background-image: url(../../images/phase-3-active.png);
+}
+
+.phase-progress-4-active
+{
+	background-image: url(../../images/phase-4-active.png);
+}
+
+.phase-progress-5-active
+{
+	background-image: url(../../images/phase-5-active.png);
+}
+
+.phase-progress-1-complete
+{
+	background-image: url(../../images/phase-1-complete.png);
+}
+
+.phase-progress-2-complete
+{
+	background-image: url(../../images/phase-2-complete.png);
+}
+
+.phase-progress-3-complete
+{
+	background-image: url(../../images/phase-3-complete.png);
+}
+
+.phase-progress-4-complete
+{
+	background-image: url(../../images/phase-4-complete.png);
+}
+
+.phase-progress-5-complete
+{
+	background-image: url(../../images/phase-5-complete.png);
+}
+
+.phase-progress-1-inactive
+{
+	background-image: url(../../images/phase-1-inactive.png);
+}
+
+.phase-progress-2-inactive
+{
+	background-image: url(../../images/phase-2-inactive.png);
+}
+
+.phase-progress-3-inactive
+{
+	background-image: url(../../images/phase-3-inactive.png);
+}
+
+.phase-progress-4-inactive
+{
+	background-image: url(../../images/phase-4-inactive.png);
+}
+
+.phase-progress-5-inactive
+{
+	background-image: url(../../images/phase-5-inactive.png);
+}
+
+.phase-icon
+{
+	width:83px;
+	height:0px;
+}
+
+.phase1-icon
+{
+	
+
+	background-image: url(../../images/phase1.png);
+	float:right;
+	background-repeat:no-repeat;
+	background-position: center top;
+	padding-top:22px;
+	text-align: center;
+	color: #999;
+}
+
+.phase2-icon
+{
+
+	background-image: url(../../images/phase2.png);
+
+	float:right;
+	background-repeat:no-repeat;
+	background-position: center top;
+	padding-top:22px;
+	text-align: center;
+	color: #999;
+}
+.phase3-icon
+{
+
+	background-image: url(../../images/phase3.png);
+	
+
+	float:right;
+	background-repeat:no-repeat;
+	background-position: center top;
+	padding-top:22px;
+	text-align: center;
+	color: #999;
+
+}
+.phase4-icon
+{
+
+	background-image: url(../../images/phase4.png);
+	
+
+	float:right;
+	background-repeat:no-repeat;
+	background-position: center top;
+	padding-top:22px;
+	text-align: center;
+	color: #999;
+}
+
+.phases-arrow-wrap
+{
+	width:100%;
+}
+
+
+.pager-link
+{
+	background:#fff;padding:2px 5px;color:#006699;display:inline-block;text-decoration:none !important;font-size:11px !important; border: 1px solid #ccc;
+}
+
+.pager-link:hover
+{
+	background:/*#4D6880*/#f3f3f3;
+	color:#006699;
+	}
+
+.pager-link-inactive
+{
+background:/*#4D6880*/#f3f3f3;text-decoration:none;color:#333; font-size:11px !important; border: 1px solid #ccc;
+padding:2px 5px;
+display:inline-block;
+}
+
+.pager-wrapper
+{
+	padding-top:10px;
+border-top: 1px dotted #8dbde6;
+background-position: right -1px !important;
+
+}
+
+
+.tab-active, .tab-inactive
+{
+	background: url(../../Portals/_default/Skins/ourspace/images/info-bg.png) repeat-x center top;
+	background-color: #d1ebfe;
+	padding:0px 10px;
+	border: 1px solid #64bbfc;
+	text-decoration: none !important;
+	color: #006699 !important;
+	font-weight:bold;
+	height:29px;
+	line-height:29px;
+	display:block;
+	float:left;
+	margin-right:7px;
+	
+	
+	-moz-border-radius-topright:3px;
+	-webkit-border-top-right-radius:3px;
+	border-top-right-radius: 3px;
+	
+	-moz-border-radius-topleft:3px;
+	-webkit-border-top-left-radius:3px;
+	border-top-left-radius: 3px;
+	
+
+}
+
+
+.tab-active
+{
+	/*background: url(../../Portals/_default/Skins/ourspace/images/info-bg.png) repeat-x center top;
+	*/background-color: #fff !important;
+	background-image:none;
+	color: #CC6600 !important;
+		border-bottom:none;
+		z-index:1;
+		height:30px;
+}
+
+.tab-line
+{
+	position:absolute;
+	border-top: 1px solid #64bbfc;
+	width:835px;
+	top:30px;
+	left:-22px;
+	z-index:-1;
+}
+
+.tabs-wrapper
+{
+	position:relative;
+	height:50px;
+	margin-top:25px;
+}
+
+.title-bar{padding:5px; color:#fff; font-size: 15px; font-weight:bold; background: url("../../Portals/_Default/Skins/Ourspace/images/thread-header-bg.png")/*url('images/alt_header_bg.png')*/ center center repeat-x;border-top: solid 1px #fff;padding-left:8px;}
+
+
+.header-separator
+{
+background-image: url('../../Portals/_Default/Skins/Ourspace/images/thread-header-separator-bg.png');
+height:24px;
+width:200px;
+background-position: left center;
+float:left;
+padding-left:20px;
+background-repeat: no-repeat;
+line-height:25px !important;
+
+}
+
+.header-separator a, .header-separator a:link 
+{
+	color: #fff !important;
+	line-height:25px !important;
+	font-size: 15px;
+}
+
+.category-info
+{
+	color: #333;
+	margin-top: 5px;
+}
+
+
+.topic-padded
+{
+	padding-left:19px !important;
+}
+
+.update-panel-loading
+{
+	/*color:#ededed !important;*/
+	background-image: url(images/loading.gif) !important;
+	background-position: right -4px;
+	background-repeat:no-repeat;
+}
+
+.postActions a
+{
+	white-space:nowrap;
+}
+
+.postActions
+{
+	text-align:center;
+	border-left: 1px solid #ccc;
+	padding:0 0 0 10px;
+}
+
+.gray-text
+{
+	color: #999;
+}
+

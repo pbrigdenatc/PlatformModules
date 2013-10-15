@@ -1,0 +1,12 @@
+#thread-details-container
+{
+	padding-left:8px;
+}
+
+#thread-details-container a:link, #thread-details-container a, #thread-details-container a:visited, #thread-details-container a:hover, #thread-details-container a:active, #thread-details-container a
+{
+	color: #006699 !important;
+    font-size: 13px !important;
+    font-weight: bold !important;
+    text-decoration: none;
+}

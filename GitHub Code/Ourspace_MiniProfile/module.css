@@ -1,0 +1,32 @@
+
+
+#mini-profile a.mini-profile-name:link, #mini-profile a.mini-profile-name, #mini-profile a.mini-profile-name:visited, #mini-profile a.mini-profile-name:hover, #mini-profile a.mini-profile-name:active, #mini-profile a.mini-profile-name {
+
+    text-decoration:none;
+    color: #006699 !important;
+    font-size: 13px !important;
+    font-weight: bold !important;
+}
+
+#mini-profile a:link, #mini-profile a, #mini-profile a:visited, #mini-profile a:active, #mini-profile a {
+
+    text-decoration:none;
+    color: #006699 !important;
+
+}
+
+#mini-profile img
+{
+	height:50px;
+	width:50px;
+	float:left;
+	margin-right:8px;
+	margin-bottom:5px;
+}
+
+
+
+.ui-autocomplete li
+{
+	list-style-type: none !important;
+}

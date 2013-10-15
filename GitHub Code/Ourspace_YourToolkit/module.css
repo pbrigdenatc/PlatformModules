@@ -1,0 +1,35 @@
+.toolkit-active
+{
+	background-image: url(images/toolkit-active-bg.png);
+	width:208px;
+	height:27px;
+	position:absolute;
+	z-index:-1;
+	left:-5px;
+}
+
+.toolkit-active-1
+{
+	top:12px;
+}
+
+.toolkit-active-2
+{
+	top:39px;
+}
+
+.toolkit-active-3
+{
+	top:66px;
+}
+
+.toolkit-active-4
+{
+	top:93px;
+}
+
+.toolkit-active-0
+{
+	display:none;
+}
+

@@ -1,0 +1,112 @@
+.messageRead_False
+{
+	height:15px;
+	width:15px;
+	display:block;
+	background-image:url(images/unread.png);
+	margin:0 10px 0 10px;
+	background-position: 0px -2px;
+	background-repeat:no-repeat;
+	
+	
+	
+}
+
+.messageRead_True
+{
+	height:15px;
+	width:15px;
+	display:block;
+	background-image:url(images/read.png);
+margin:0 10px 0 10px;
+}
+
+a.GotoMessage_Link
+{
+	color:#545454 !important;
+	text-decoration:none !important;
+}
+
+a.GotoMessage_Link:hover
+{
+	color:#000 !important;
+	text-decoration:none;
+}
+
+.messageDate
+{
+	color:#808080;
+	font-size:11px;
+}
+
+.messageBodyDiv
+{
+	
+	position:relative;
+	float:left;
+	width:350px;
+}
+
+.profileMiniContainer
+{
+	/* position:relative;
+	 top:10px;
+	 left:5px;*/
+	 width:50px;
+	 height:50px;
+	 float:left;
+	 margin-right:10px;
+}
+
+.messageDetailsRow
+{
+	/*position: absolute;
+	top:10px;
+	left:65px;*/
+	float:left;
+	width:300px;
+	margin-bottom:5px;
+}
+
+.messageContents
+{
+	/*position:absolute;
+	top:30px;
+	left:65px;*/
+	float:left;
+}
+
+.messageDetailsContainer
+{
+	float:left;
+	width:200px;
+}
+
+.conversationMessages
+{
+	float:left;
+	clear:left;
+	margin-top:20px;
+}
+
+.replyWrapper
+{
+	float:left;
+	clear:left;
+	margin-top:10px;
+}
+
+.messageBodyDivOuter
+{
+	float:left;
+	width:400px;
+	margin-bottom:10px;
+	padding-bottom:10px;
+	border-bottom: 1px solid #ddd;
+}
+
+.conversationPagerContainer
+{
+	float:left;
+	clear:left;
+}

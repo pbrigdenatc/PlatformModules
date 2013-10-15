@@ -1,0 +1,112 @@
+.top-user
+{
+    width: 180px;
+    /*text-align: center;*/
+    border-bottom: 1px dotted #b1bcc5;
+    padding-top:2px;
+    float:left;
+
+}
+
+.top-user-category
+{
+	width:65px;
+	float: left;
+
+}
+
+
+.top-user-category a
+{
+	/*color: #0088CE !important;*/
+	text-decoration: none  !important;
+	font-size:11px !important;
+	font-weight: bold !important;
+}
+
+.top-user a:link,.top-user-category a, .top-user a:visited, .top-user a:hover, .top-user a:active, .top-user a
+{
+    text-decoration: none !important;
+        font-size:13px !important;
+    font-weight:bold !important;
+    color: #006699 !important;
+}
+
+.top-user a img
+{
+    border: 0;
+}
+
+.top-user img
+{
+    margin: 4px 7px 5px 0;
+    display:block;
+    float:left;
+}
+
+.top-user span
+{
+    /*display: block;*/
+    text-align: center;
+    margin-bottom: 10px;
+    font-size:12px;
+}
+
+.users-row
+{
+    clear:both;
+}
+
+.hall-of-fame-header
+{
+    height: 18px;
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-bottom: 1px;
+    text-align:center;
+}
+
+.hall-of-fame-header a:link, .hall-of-fame-header a:visited, .hall-of-fame-header a:hover, .hall-of-fame-header a:active
+{
+ text-decoration: None !important;
+    color: #006699 !important;
+}
+
+
+.hall-of-fame-header a.selected
+{
+    color: #cc6600 !important;
+    font-weight: bold !important;
+}
+
+.top-user .user-position
+{
+	height:50px;
+	width:10px;
+	float:left;
+	line-height:50px;
+}
+.top-user .user-position-small
+{
+	height:30px;
+	width:10px;
+	float:left;
+	line-height:30px;
+}
+
+.top-user .user-position, .top-user .user-position-small
+{
+	color: #999999;
+	font-weight:bold;
+}
+
+a.all-leaders-link
+{
+	margin-top:3px;
+	font-weight:normal;
+	display:block;
+	
+	    text-decoration: none !important;
+        font-size:13px !important;
+    color: #006699 !important;
+}

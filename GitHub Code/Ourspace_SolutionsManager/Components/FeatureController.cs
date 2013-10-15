@@ -1,0 +1,128 @@
+/*
+' Copyright (c) 2010 DotNetNuke Corporation
+'  All rights reserved.
+' 
+' THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED
+' TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL
+' THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF
+' CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
+' DEALINGS IN THE SOFTWARE.
+' 
+*/
+
+using System.Collections.Generic;
+//using System.Xml;
+using DotNetNuke.Entities.Modules;
+using DotNetNuke.Services.Search;
+
+namespace DotNetNuke.Modules.Ourspace_SolutionsManager.Components
+{
+
+    /// -----------------------------------------------------------------------------
+    /// <summary>
+    /// The Controller class for Ourspace_SolutionsManager
+    /// </summary>
+    /// -----------------------------------------------------------------------------
+    public class FeatureController : IPortable, ISearchable, IUpgradeable
+    {
+
+        #region Public Methods
+
+
+
+        #endregion
+
+        #region Optional Interfaces
+
+        /// -----------------------------------------------------------------------------
+        /// <summary>
+        /// ExportModule implements the IPortable ExportModule Interface
+        /// </summary>
+        /// <param name="ModuleID">The Id of the module to be exported</param>
+        /// -----------------------------------------------------------------------------
+        public string ExportModule(int ModuleID)
+        {
+            //string strXML = "";
+
+            //List<Ourspace_SolutionsManagerInfo> colOurspace_SolutionsManagers = GetOurspace_SolutionsManagers(ModuleID);
+            //if (colOurspace_SolutionsManagers.Count != 0)
+            //{
+            //    strXML += "<Ourspace_SolutionsManagers>";
+
+            //    foreach (Ourspace_SolutionsManagerInfo objOurspace_SolutionsManager in colOurspace_SolutionsManagers)
+            //    {
+            //        strXML += "<Ourspace_SolutionsManager>";
+            //        strXML += "<content>" + DotNetNuke.Common.Utilities.XmlUtils.XMLEncode(objOurspace_SolutionsManager.Content) + "</content>";
+            //        strXML += "</Ourspace_SolutionsManager>";
+            //    }
+            //    strXML += "</Ourspace_SolutionsManagers>";
+            //}
+
+            //return strXML;
+
+            throw new System.NotImplementedException("The method or operation is not implemented.");
+        }
+
+        /// -----------------------------------------------------------------------------
+        /// <summary>
+        /// ImportModule implements the IPortable ImportModule Interface
+        /// </summary>
+        /// <param name="ModuleID">The Id of the module to be imported</param>
+        /// <param name="Content">The content to be imported</param>
+        /// <param name="Version">The version of the module to be imported</param>
+        /// <param name="UserId">The Id of the user performing the import</param>
+        /// -----------------------------------------------------------------------------
+        public void ImportModule(int ModuleID, string Content, string Version, int UserID)
+        {
+            //XmlNode xmlOurspace_SolutionsManagers = DotNetNuke.Common.Globals.GetContent(Content, "Ourspace_SolutionsManagers");
+            //foreach (XmlNode xmlOurspace_SolutionsManager in xmlOurspace_SolutionsManagers.SelectNodes("Ourspace_SolutionsManager"))
+            //{
+            //    Ourspace_SolutionsManagerInfo objOurspace_SolutionsManager = new Ourspace_SolutionsManagerInfo();
+            //    objOurspace_SolutionsManager.ModuleId = ModuleID;
+            //    objOurspace_SolutionsManager.Content = xmlOurspace_SolutionsManager.SelectSingleNode("content").InnerText;
+            //    objOurspace_SolutionsManager.CreatedByUser = UserID;
+            //    AddOurspace_SolutionsManager(objOurspace_SolutionsManager);
+            //}
+
+            throw new System.NotImplementedException("The method or operation is not implemented.");
+        }
+
+        /// -----------------------------------------------------------------------------
+        /// <summary>
+        /// GetSearchItems implements the ISearchable Interface
+        /// </summary>
+        /// <param name="ModInfo">The ModuleInfo for the module to be Indexed</param>
+        /// -----------------------------------------------------------------------------
+        public DotNetNuke.Services.Search.SearchItemInfoCollection GetSearchItems(DotNetNuke.Entities.Modules.ModuleInfo ModInfo)
+        {
+            //SearchItemInfoCollection SearchItemCollection = new SearchItemInfoCollection();
+
+            //List<Ourspace_SolutionsManagerInfo> colOurspace_SolutionsManagers = GetOurspace_SolutionsManagers(ModInfo.ModuleID);
+
+            //foreach (Ourspace_SolutionsManagerInfo objOurspace_SolutionsManager in colOurspace_SolutionsManagers)
+            //{
+            //    SearchItemInfo SearchItem = new SearchItemInfo(ModInfo.ModuleTitle, objOurspace_SolutionsManager.Content, objOurspace_SolutionsManager.CreatedByUser, objOurspace_SolutionsManager.CreatedDate, ModInfo.ModuleID, objOurspace_SolutionsManager.ItemId.ToString(), objOurspace_SolutionsManager.Content, "ItemId=" + objOurspace_SolutionsManager.ItemId.ToString());
+            //    SearchItemCollection.Add(SearchItem);
+            //}
+
+            //return SearchItemCollection;
+
+            throw new System.NotImplementedException("The method or operation is not implemented.");
+        }
+
+        /// -----------------------------------------------------------------------------
+        /// <summary>
+        /// UpgradeModule implements the IUpgradeable Interface
+        /// </summary>
+        /// <param name="Version">The current version of the module</param>
+        /// -----------------------------------------------------------------------------
+        public string UpgradeModule(string Version)
+        {
+            throw new System.NotImplementedException("The method or operation is not implemented.");
+        }
+
+        #endregion
+
+    }
+
+}

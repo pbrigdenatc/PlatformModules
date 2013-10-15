@@ -1,0 +1,11 @@
+.statistics-wrapper a
+{
+ text-decoration: None !important;
+    color: #006699 !important;
+}
+
+.statistics-wrapper .statistics-info
+{
+	color:#666666;
+	font-weight:bold;
+}
